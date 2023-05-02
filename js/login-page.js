@@ -12,7 +12,7 @@ loginButton.addEventListener("click", (e) => {
     //checks the username and password fields and if they are correct, runs greetingResult, takes you to the home page and sets Login to true.
     if (username === "student" && password === "student") {
         alert("Login Success!");
-        location.href = "../view/index.html"
+        location.href = "../index.html"
         localStorage.setItem("Login", true)
     } else {
         //if the user and pass are wrong, it will show loginErrorMsg.
