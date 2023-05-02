@@ -12,7 +12,7 @@ const navBarLoggedIn= `
     <li class="navli"><a class="navA" href="../index.html">Home</a></li>
     <li class="navli"><a class="navA" href="../aboutUs.html">About Us</a></li>
     <li class="navli"><a class="navA" href="../contactUs.html">Contact Us</a></li>
-    <li class="navli"><a class="navA" href="../view/products.html">Store</a></li>
+    <li class="navli"><a class="navA" href="../products.html">Store</a></li>
     <li class="navli cartli cart" style="float:right"><a class="navA" href="../cart.html"><ion-icon name="basket"></ion-icon>Cart<span id="cartSpan" class="cartli">0</span></a></li>
     <li class="navli" style="float:right"><a class="navA" href="../Logout.html">Logout!</a></li>
    </ul>`
