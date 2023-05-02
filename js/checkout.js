@@ -24,7 +24,7 @@ if (checkBtn != null) {
     //Listens for the checkout button, once clicked, it puts all the inputted info into localStorage.
     checkBtn.addEventListener("click", (e) => {
         e.preventDefault();
-        location.href = "../view/receipt.html"
+        location.href = "../receipt.html"
         localStorage.setItem("firstName", fName.value);
         localStorage.setItem("lastName", lName.value);
         localStorage.setItem("email", email.value);
