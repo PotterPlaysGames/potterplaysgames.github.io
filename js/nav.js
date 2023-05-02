@@ -1,20 +1,20 @@
 //Navigation bar for when the user is not logged in
 const navBarNotLoggedIn= `
    <ul id="nav">
-    <li class="navli"><a class="navA" href="../view/index.html">Home</a></li>
-    <li class="navli"><a class="navA" href="../view/products.html">Store</a></li>
-    <li class="navli" style="float:right"><a class="navA" href="../view/login.html">Login!</a></li>
+    <li class="navli"><a class="navA" href="../index.html">Home</a></li>
+    <li class="navli"><a class="navA" href="../products.html">Store</a></li>
+    <li class="navli" style="float:right"><a class="navA" href="../login.html">Login!</a></li>
    </ul>`
 
 //Navigation bar for when the user is logged in
 const navBarLoggedIn= `
    <ul id="nav">
-    <li class="navli"><a class="navA" href="../view/index.html">Home</a></li>
-    <li class="navli"><a class="navA" href="../view/aboutUs.html">About Us</a></li>
-    <li class="navli"><a class="navA" href="../view/contactUs.html">Contact Us</a></li>
+    <li class="navli"><a class="navA" href="../index.html">Home</a></li>
+    <li class="navli"><a class="navA" href="../aboutUs.html">About Us</a></li>
+    <li class="navli"><a class="navA" href="../contactUs.html">Contact Us</a></li>
     <li class="navli"><a class="navA" href="../view/products.html">Store</a></li>
-    <li class="navli cartli cart" style="float:right"><a class="navA" href="../view/cart.html"><ion-icon name="basket"></ion-icon>Cart<span id="cartSpan" class="cartli">0</span></a></li>
-    <li class="navli" style="float:right"><a class="navA" href="../view/Logout.html">Logout!</a></li>
+    <li class="navli cartli cart" style="float:right"><a class="navA" href="../cart.html"><ion-icon name="basket"></ion-icon>Cart<span id="cartSpan" class="cartli">0</span></a></li>
+    <li class="navli" style="float:right"><a class="navA" href="../Logout.html">Logout!</a></li>
    </ul>`
 
 //Checks if the user is logged in
