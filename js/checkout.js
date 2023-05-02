@@ -40,7 +40,7 @@ if (checkBtn != null) {
 if (goBack != null) {
     goBack.addEventListener("click", (e) => {
         e.preventDefault();
-        location.href = "../view/cart.html"
+        location.href = "../cart.html"
     })
 }
 //This function sends all the locally stored data to the receipt page.
