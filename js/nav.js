@@ -8,8 +8,8 @@ const navBarNotLoggedIn= `
 //Navigation bar for when the user is logged in
 const navBarLoggedIn= `
    <ul id="nav">
-    <li class="navli"><a class="navA" href="./index.html">Home</a></li
-    <li class="navli" style="float:right"><a class="navA" href="./Logout.html">Logout!</a></li>
+    <li class="navli"><a class="navA" href="./index.html">Home</a></li>
+    <li class="navli" style="float:right"><a class="navA" href="./logout.html">Logout!</a></li>
    </ul>`
 
 //Checks if the user is logged in
