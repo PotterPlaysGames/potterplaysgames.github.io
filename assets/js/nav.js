@@ -10,12 +10,7 @@ window.onload = async () => {
     const navBarNotLoggedIn= `
 	    <ul>
 			<li><a href="index.html">Home</a></li>
-			<li>
-				<a href="#" class="icon solid fa-angle-down"></a>
-				    <ul>
-						<li><a href="./contact.html">Contact</a></li>
-					</ul>
-			</li>
+   				<li><a href="./contact.html">Contact</a></li>
 				<li><a href="#" id="lbutton" class="button">Login</a></li>
 				<li><a href="#" class="button">Sign Up</a></li>
 		</ul>`
