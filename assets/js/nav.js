@@ -22,6 +22,9 @@ let auth0;
             const isAuthenticated = await auth0.isAuthenticated();
 
             console.log("Is authenticated after redirect:", isAuthenticated);
+
+
+            window.history.replaceState({}, document.title, "/");
         }
 
 
