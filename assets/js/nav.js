@@ -1,66 +1,67 @@
-let auth0 = null;
-
 window.onload = async () => {
-    auth0 = await window.createAuth0Client({
+let auth0;
+    try {
+    const auth0 = await createAuth0Client({
         domain: 'dev-difkemcsbh4bjh0k.us.auth0.com',
-        client_id: 'nZbC5fLSuxF7XsbZxKleoDJfhTbXEIiJ'
+        client_id: 'nZbC5fLSuxF7XsbZxKleoDJfhTbXEIiJ',
+        redirect_uri: 'https://ppgmc.org/index.html',
+        audience: 'https://dev-difkemcsbh4bjh0k.us.auth0.com/api/v2/',
+        responseType: 'token id_token',
+        scope: 'openid profile email',
+        cacheLocation: 'localstorage', // This stores auth info in localStorage so it persists across page refreshes
     });
 
-    //Navigation bar for when the user is not logged in
-    const navBarNotLoggedIn= `
-	    <ul>
-			<li><a href="index.html">Home</a></li>
-   				<li><a href="./contact.html">Contact</a></li>
-				<li><a href="#" id="lbutton" class="button">Login</a></li>
-				<li><a href="#" class="button">Sign Up</a></li>
-		</ul>`
+    // Check if the user is coming back from Auth0 after authentication
+        if (window.location.search.includes('code=')) {
+            console.log("Detected 'code=' in URL. Handling Auth0 redirect callback...");
 
-    //Navigation bar for when the user is logged in
-    const navBarLoggedIn= `
-	    <ul>
-			<li><a href="./index.html">Home</a></li>
-			<li>
-				<a href="#" class="icon solid fa-angle-down"></a>
-				    <ul>
-						<li><a href="./contact.html">Contact</a></li>
-					    <li><a href="./downloads.html">Downloads</a></li>
-					</ul>
-			</li>
-				<li><a href="#" class="button" id="logout">Logout!</a></li>
-		</ul>`
+            await auth0.handleRedirectCallback();
 
-    function isAuthenticated() {
-        let expiresAt = JSON.parse(localStorage.getItem('expires_at'));
-        return new Date().getTime() < expiresAt;
-    }
+            console.log("'handleRedirectCallback' executed. Checking authentication status...");
 
-    function logout() {
-        auth0.logout({
-            returnTo: 'https://ppgmc.org/index.html',
-            clientID: 'nZbC5fLSuxF7XsbZxKleoDJfhTbXEIiJ'
-        });
-    }
+            const isAuthenticated = await auth0.isAuthenticated();
 
-    //Checks if the user is logged in
-    function checkLogin() {
-        if (isAuthenticated()) {
+            console.log("Is authenticated after redirect:", isAuthenticated);
+        }
+
+
+        // Your navbars remain unchanged
+        const navBarNotLoggedIn = `
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="./contact.html">Contact</a></li>
+                <li><a href="#" id="lbutton" class="button">Login</a></li>
+                <li><a href="#" class="button">Sign Up</a></li>
+            </ul>`
+
+        const navBarLoggedIn = `
+            <ul>
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./contact.html">Contact</a></li>
+                <li><a href="./downloads.html">Downloads</a></li>
+                <li><a href="#" class="button" id="logout">Logout!</a></li>
+            </ul>`
+
+        // ... Your previous code before the check
+
+        const isAuthenticated = await auth0.isAuthenticated();
+
+        console.log("Is authenticated:", isAuthenticated);
+
+        if (isAuthenticated) {
             document.getElementById("nav").insertAdjacentHTML("afterbegin", navBarLoggedIn);
-            document.getElementById("logout").addEventListener("click", logout);
+            document.getElementById("logout").addEventListener("click", async () => {
+                await auth0.logout({ returnTo: 'https://ppgmc.org/index.html' });
+            });
         } else {
             document.getElementById("nav").insertAdjacentHTML("afterbegin", navBarNotLoggedIn);
-            let loginButton = document.getElementById("lbutton"); // Moved this line here
-            loginButton.addEventListener('click', (e) => {
+            document.getElementById("lbutton").addEventListener('click', (e) => {
                 e.preventDefault();
-                auth0.loginWithRedirect();  //Changed this line
+                auth0.loginWithRedirect();
             });
         }
+
+    } catch (error) {
+        console.error("Error initializing Auth0 client or handling redirection: ", error);
     }
-
-    checkLogin();
 };
-
-
-
-
-
-
