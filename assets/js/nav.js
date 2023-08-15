@@ -23,22 +23,8 @@ async function setupAuth() {
                 <li><a href="#">About Me</a></li>
                 <li><a href="https://github.com/potterplaysgames">Github</a></li>
                 <li><a href="#" id="lbutton" class="button">Login/Sign Up</a></li>
-            </ul>`;// This gets the user's email.
-
-        const navBarLoggedIn = `
-            <ul>
-                <li><a href="./index.html">Home</a></li>
-                <li><a href="#">About Me</a></li>
-                <li><a href="./contact.html">Contact</a></li>
-                <li><a href="https://github.com/potterplaysgames">Github</a></li>
-                <li><a href="./downloads.html">Downloads</a></li>
-                <li class="dropdown">
-                    <a href="#">${userEmail}</a> <!-- Display the user's email -->
-                    <div class="dropdown-content">
-                        <a href="#" class="button" id="logout">Logout</a>
-                    </div>
-                </li>
             </ul>`;
+
 
         const loginButton = document.getElementById("lbutton");
         const logoutButton = document.getElementById("logout");
@@ -63,6 +49,22 @@ async function setupAuth() {
         let userEmail = "";
         if (isAuthenticated) {
             userEmail = await auth0.getUser().email;
+
+            const navBarLoggedIn = `
+            <ul>
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="#">About Me</a></li>
+                <li><a href="./contact.html">Contact</a></li>
+                <li><a href="https://github.com/potterplaysgames">Github</a></li>
+                <li><a href="./downloads.html">Downloads</a></li>
+                <li class="dropdown">
+                    <a href="#">${userEmail}</a> <!-- Display the user's email -->
+                    <div class="dropdown-content">
+                        <a href="#" class="button" id="logout">Logout</a>
+                    </div>
+                </li>
+            </ul>`;
+
             document.getElementById("nav").insertAdjacentHTML("afterbegin", navBarLoggedIn);
 
             const logoutButton = document.getElementById("logout");
