@@ -60,7 +60,7 @@ async function setupAuth() {
 
             const logoutButton = document.getElementById("logout");
             logoutButton.addEventListener('click', handleLogoutClick);
-            logoutButton.addEventListener('touchstart', handleLogoutClick);
+            logoutButton.addEventListener('touchend', handleLogoutClick);
         } else {
             document.getElementById("nav").insertAdjacentHTML("afterbegin", navBarNotLoggedIn);
 
@@ -68,7 +68,7 @@ async function setupAuth() {
 
             const loginButton = document.getElementById("lbutton");
             loginButton.addEventListener('click', handleLoginClick);
-            loginButton.addEventListener('touchstart', handleLoginClick);
+            loginButton.addEventListener('touchend', handleLoginClick);
 
             // Redirect to restricted access page if on the downloads page and not authenticated
             if (currentPath === "/downloads.html") {
