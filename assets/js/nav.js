@@ -53,21 +53,27 @@ async function setupAuth() {
         }
 
         const isAuthenticated = await auth0.isAuthenticated();
+        const currentPath = window.location.pathname;
 
         if (isAuthenticated) {
             document.getElementById("nav").insertAdjacentHTML("afterbegin", navBarLoggedIn);
 
-            const logoutButton = document.getElementById("logout");  // Moved this line here
-
+            const logoutButton = document.getElementById("logout");
             logoutButton.addEventListener('click', handleLogoutClick);
             logoutButton.addEventListener('touchstart', handleLogoutClick);
         } else {
             document.getElementById("nav").insertAdjacentHTML("afterbegin", navBarNotLoggedIn);
 
-            const loginButton = document.getElementById("lbutton");  // Moved this line here
+            console.log("Not Logged in");
 
+            const loginButton = document.getElementById("lbutton");
             loginButton.addEventListener('click', handleLoginClick);
             loginButton.addEventListener('touchstart', handleLoginClick);
+
+            // Redirect to restricted access page if on the downloads page and not authenticated
+            if (currentPath === "/downloads.html") {
+                window.location.href = "./notloggedin.html";
+            }
         }
 
 
