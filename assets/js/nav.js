@@ -22,8 +22,7 @@ async function setupAuth() {
                 <li><a href="index.html">Home</a></li>
                 <li><a href="#">About Me</a></li>
                 <li><a href="https://github.com/potterplaysgames">Github</a></li>
-                <li><a href="#" id="lbutton" class="button">Login</a></li>
-                <li><a href="#" class="button">Sign Up</a></li>
+                <li><a href="#" id="lbutton" class="button">Login/Sign Up</a></li>
             </ul>`;
 
         const navBarLoggedIn = `
