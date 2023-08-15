@@ -95,10 +95,12 @@
 			}, userConfig);
 
 			// Expand "target" if it's not a jQuery object already.
-				if (typeof config.target != 'jQuery')
+				if (!(config.target instanceof jQuery)) {
 					config.target = $(config.target);
+				}
 
-		// Panel.
+
+			// Panel.
 
 			// Methods.
 				$this._hide = function(event) {
