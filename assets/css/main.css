@@ -3914,18 +3914,26 @@
 	border-radius: 6px; /* Matching the border-radius of nav items */
 }
 
+.dropdown-content {
+	display: flex;
+	flex-direction: column;
+	justify-content: center; /* Vertically center the content */
+	align-items: center; /* Horizontally center the content */
+}
+
 .dropdown:hover .dropdown-content {
 	display: block;
 }
 
-.dropdown-content a {
-	color: #fff; /* Matching the color of other nav items */
-	padding: 12px 16px;
-	display: block;
-	text-decoration: none;
-	border-radius: 6px; /* Matching the border-radius of nav items */
+.dropdown-content a.button {
+	background: none;
+	border: none;
+	color: #fff;
+	font-weight: bold; /* Makes the text slightly bolder */
+	text-align: center;
 }
 
-.dropdown-content a:hover {
-	background-color: rgba(153, 153, 153, 0.25); /* Hover effect similar to other nav items */
+.dropdown-content a.button:hover {
+	background-color: rgba(153, 153, 153, 0.5); /* A bit darker on hover for better visibility */
 }
+
