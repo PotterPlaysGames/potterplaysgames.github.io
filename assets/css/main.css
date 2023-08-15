@@ -3896,3 +3896,36 @@
 			}
 
 	}
+
+/* Dropdown Styles */
+
+.dropdown {
+	position: relative;
+	display: inline-block;
+}
+
+.dropdown-content {
+	display: none;
+	position: absolute;
+	right: 0; /* Adjust as needed to align with the theme */
+	background-color: rgba(0, 0, 0, 0.8); /* Gives a semi-transparent black background */
+	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+	z-index: 1;
+	border-radius: 6px; /* Matching the border-radius of nav items */
+}
+
+.dropdown:hover .dropdown-content {
+	display: block;
+}
+
+.dropdown-content a {
+	color: #fff; /* Matching the color of other nav items */
+	padding: 12px 16px;
+	display: block;
+	text-decoration: none;
+	border-radius: 6px; /* Matching the border-radius of nav items */
+}
+
+.dropdown-content a:hover {
+	background-color: rgba(153, 153, 153, 0.25); /* Hover effect similar to other nav items */
+}
