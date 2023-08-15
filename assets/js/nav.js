@@ -5,7 +5,7 @@ async function setupAuth() {
         auth0 = await createAuth0Client({
             domain: 'dev-difkemcsbh4bjh0k.us.auth0.com',
             client_id: 'nZbC5fLSuxF7XsbZxKleoDJfhTbXEIiJ',
-            redirect_uri: 'https://ppgmc.org/index.html',
+            redirect_uri: 'https://www.ppgmc.org/index.html',
             audience: 'https://dev-difkemcsbh4bjh0k.us.auth0.com/api/v2/',
             responseType: 'token id_token',
             scope: 'openid profile email',
@@ -21,6 +21,7 @@ async function setupAuth() {
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="#">About Me</a></li>
+                <li><a href="https://github.com/potterplaysgames">Github</a></li>
                 <li><a href="#" id="lbutton" class="button">Login</a></li>
                 <li><a href="#" class="button">Sign Up</a></li>
             </ul>`;
@@ -29,6 +30,7 @@ async function setupAuth() {
             <ul>
                 <li><a href="./index.html">Home</a></li>
                 <li><a href="./contact.html">Contact</a></li>
+                <li><a href="https://github.com/potterplaysgames">Github</a></li>
                 <li><a href="./downloads.html">Downloads</a></li>
                 <li><a href="#" class="button" id="logout">Logout!</a></li>
             </ul>`;
@@ -47,7 +49,7 @@ async function setupAuth() {
         // The function that handles logout
         async function handleLogoutClick(e) {
             e.preventDefault();
-            await auth0.logout({ returnTo: 'https://ppgmc.org/index.html' });
+            await auth0.logout({ returnTo: 'https://www.ppgmc.org/index.html' });
         }
 
         const isAuthenticated = await auth0.isAuthenticated();
