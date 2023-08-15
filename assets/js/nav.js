@@ -23,9 +23,7 @@ async function setupAuth() {
                 <li><a href="#">About Me</a></li>
                 <li><a href="https://github.com/potterplaysgames">Github</a></li>
                 <li><a href="#" id="lbutton" class="button">Login/Sign Up</a></li>
-            </ul>`;
-
-        const userEmail = await auth0.getUser().email;  // This gets the user's email.
+            </ul>`;// This gets the user's email.
 
         const navBarLoggedIn = `
             <ul>
@@ -62,7 +60,9 @@ async function setupAuth() {
         const isAuthenticated = await auth0.isAuthenticated();
         const currentPath = window.location.pathname;
 
+        let userEmail = "";
         if (isAuthenticated) {
+            userEmail = await auth0.getUser().email;
             document.getElementById("nav").insertAdjacentHTML("afterbegin", navBarLoggedIn);
 
             const logoutButton = document.getElementById("logout");
