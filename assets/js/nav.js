@@ -48,7 +48,9 @@ async function setupAuth() {
 
         let userEmail = "";
         if (isAuthenticated) {
-            userEmail = await auth0.getUser().email;
+            const user = await auth0.getUser();
+            console.log(user);
+            let userEmail = user.name;
 
             const navBarLoggedIn = `
             <ul>
