@@ -25,6 +25,8 @@ async function setupAuth() {
                 <li><a href="#" id="lbutton" class="button">Login/Sign Up</a></li>
             </ul>`;
 
+        const userEmail = await auth0.getUser().email;  // This gets the user's email.
+
         const navBarLoggedIn = `
             <ul>
                 <li><a href="./index.html">Home</a></li>
@@ -32,7 +34,12 @@ async function setupAuth() {
                 <li><a href="./contact.html">Contact</a></li>
                 <li><a href="https://github.com/potterplaysgames">Github</a></li>
                 <li><a href="./downloads.html">Downloads</a></li>
-                <li><a href="#" class="button" id="logout">Logout!</a></li>
+                <li class="dropdown">
+                    <a href="#">${userEmail}</a> <!-- Display the user's email -->
+                    <div class="dropdown-content">
+                        <a href="#" class="button" id="logout">Logout</a>
+                    </div>
+                </li>
             </ul>`;
 
         const loginButton = document.getElementById("lbutton");
