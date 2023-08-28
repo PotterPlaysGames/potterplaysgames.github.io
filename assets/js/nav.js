@@ -19,7 +19,7 @@ async function setupAuth() {
 
         const navBarNotLoggedIn = `
             <ul>
-                <li><a href="./index.html">Home</a></li>
+                <li><a href="../index.html">Home</a></li>
                 <li><a href="#">About Me</a></li>
                 <li><a href="https://github.com/potterplaysgames">Github</a></li>
                 <li><a href="#" id="lbutton" class="button">Login/Sign Up</a></li>
@@ -54,11 +54,11 @@ async function setupAuth() {
 
             const navBarLoggedIn = `
             <ul>
-                <li><a href="./index.html">Home</a></li>
+                <li><a href="../index.html">Home</a></li>
                 <li><a href="#">About Me</a></li>
-                <li><a href="./ContactUs/">Contact</a></li>
+                <li><a href="../ContactUs/">Contact</a></li>
                 <li><a href="https://github.com/potterplaysgames">Github</a></li>
-                <li><a href="./downloads/">Downloads</a></li>
+                <li><a href="../downloads/">Downloads</a></li>
                 <li class="dropdown">
                     <a href="#">${userEmail}</a> <!-- Display the user's email -->
                     <div class="dropdown-content">
