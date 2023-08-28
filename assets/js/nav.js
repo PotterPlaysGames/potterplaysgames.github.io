@@ -83,7 +83,7 @@ async function setupAuth() {
 
             // Redirect to restricted access page if on the downloads page and not authenticated
             if (currentPath === "/downloads/" || currentPath === "/downloads/index.html") {
-                window.location.href = "./notloggedin/";
+                window.location.href = "../notloggedin/";
             }
         }
 
