@@ -19,7 +19,7 @@ async function setupAuth() {
 
         const navBarNotLoggedIn = `
             <ul>
-                <li><a href="index.html">Home</a></li>
+                <li><a href="./index.html">Home</a></li>
                 <li><a href="#">About Me</a></li>
                 <li><a href="https://github.com/potterplaysgames">Github</a></li>
                 <li><a href="#" id="lbutton" class="button">Login/Sign Up</a></li>
@@ -56,9 +56,9 @@ async function setupAuth() {
             <ul>
                 <li><a href="./index.html">Home</a></li>
                 <li><a href="#">About Me</a></li>
-                <li><a href="./contact.html">Contact</a></li>
+                <li><a href="./ContactUs/">Contact</a></li>
                 <li><a href="https://github.com/potterplaysgames">Github</a></li>
-                <li><a href="./downloads.html">Downloads</a></li>
+                <li><a href="./downloads/">Downloads</a></li>
                 <li class="dropdown">
                     <a href="#">${userEmail}</a> <!-- Display the user's email -->
                     <div class="dropdown-content">
@@ -82,8 +82,8 @@ async function setupAuth() {
             loginButton.addEventListener('touchend', handleLoginClick);
 
             // Redirect to restricted access page if on the downloads page and not authenticated
-            if (currentPath === "/downloads.html") {
-                window.location.href = "./notloggedin.html";
+            if (currentPath === "/downloads/" || currentPath === "/downloads/index.html") {
+                window.location.href = "./notloggedin/";
             }
         }
 
