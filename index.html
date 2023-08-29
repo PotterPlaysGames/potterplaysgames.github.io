@@ -131,6 +131,11 @@
 		</div>
 
 			<!-- Scripts -->
+		<script type="text/javascript">
+			if (location.protocol !== 'https://') {
+				location.replace(`https://${location.href.substring(location.protocol.length)}`);
+			}
+		</script>
 		<script>
 			console.log("Inline script running...");
 		</script>
