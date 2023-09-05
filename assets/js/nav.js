@@ -21,15 +21,14 @@ async function setupAuth() {
             <ul>
                 <li><a href="../index.html">Home</a></li>
                 <li class="dropdown">
-                    <a href="#" style="color: black" class="dropbtn">Blog</a>
+                    <a href="../blog/" class="dropbtn">Blog</a>
                     <div class="dropdown-content">
-                        <a href="#" style="color: black">Service</a>
                         <!-- Nested Dropdown -->
                         <div class="nested-dropdown">
-                            <a href="#" style="color: black" class="dropbtn">Projects</a>
+                            <a href="#"  class="dropbtn">Projects</a>
                             <div class="nested-dropdown-content">
-                                <a href="#" style="color: black">Gaming</a>
-                                <a href="#" style="color: black">Buisness</a>
+                                <a href="#">Gaming</a>
+                                <a href="#">Buisness</a>
                             </div>
                         </div>
                     </div>

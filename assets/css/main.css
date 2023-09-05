@@ -3898,41 +3898,46 @@
 	}
 
 /* Dropdown Styles */
-
 .dropdown {
 	position: relative;
 	display: inline-block;
 }
+
 /* Style for the dropdown button */
 .dropbtn {
 	padding: 16px;
 	font-size: 16px;
 	border: none;
-	cursor: pointer;
+	cursor: pointer; /* Dark background color */
+	color: #fff; /* White text color */
+	border-radius: 4px;
+	transition: background-color 0.3s;
 }
 
 /* Style for the dropdown content (hidden by default) */
 .dropdown-content {
 	display: none;
 	position: absolute;
-	background-color: #f9f9f9;
+	background-color: #2b2b2b; /* Dark background color */
 	min-width: 160px;
 	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 	z-index: 1;
+	border-radius: 8px; /* Rounded corners */
 }
 
 /* Style for dropdown links */
-.dropdown-content drop {
-	color: black;
+.dropdown-content a {
+	color: #fff; /* White text color */
 	padding: 12px 16px;
 	text-decoration: none;
 	display: block;
+	transition: background-color 0.3s, color 0.3s;
 }
 
 /* Change color on hover */
-.dropdown-content drop:hover {
-	background-color: #f1f1f1;
-	color: black;
+.dropdown-content a:hover {
+	background-color: #555; /* Hover background color */
+	color: #fff; /* Hover text color */
 }
 
 /* Show the dropdown content when hovering over the dropdown button */
@@ -3942,35 +3947,42 @@
 
 /* Style for the nested dropdown button */
 .nested-dropdown .dropbtn {
-	padding: 16px;
+	padding: 12px 16px;
 	font-size: 16px;
 	border: none;
 	cursor: pointer;
+	background-color: #2b2b2b; /* Dark background color */
+	color: #fff;
+	border-radius: 8px;
+	transition: background-color 0.3s;
 }
 
 /* Style for the nested dropdown content (hidden by default) */
 .nested-dropdown .nested-dropdown-content {
 	display: none;
 	position: absolute;
-	background-color: #f9f9f9;
+	background-color: #333; /* Dark background color */
 	min-width: 160px;
-	left: 100%; /* Position to the right of the parent dropdown */
+	left: 100%;
 	top: 0;
 	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 	z-index: 1;
+	border-radius: 8px; /* Rounded corners */
 }
 
 /* Style for nested dropdown links */
 .nested-dropdown .nested-dropdown-content a {
-	color: black;
+	color: #fff; /* White text color */
 	padding: 12px 16px;
 	text-decoration: none;
 	display: block;
+	transition: background-color 0.3s, color 0.3s;
 }
 
 /* Change color on hover for nested dropdown links */
 .nested-dropdown .nested-dropdown-content a:hover {
-	background-color: #f1f1f1;
+	background-color: #555; /* Hover background color */
+	color: #fff; /* Hover text color */
 }
 
 /* Show the nested dropdown content when hovering over the nested dropdown button */
@@ -3978,3 +3990,41 @@
 	display: block;
 }
 
+/* Custom Classes */
+.custom-heading {
+	font-size: 24px;
+	font-weight: 500;
+	color: #333; /* Custom color */
+}
+
+.custom-description {
+	font-size: 18px;
+	font-weight: 300;
+	color: #555; /* Custom color */
+}
+
+.custom-button {
+	background-color: #e89980; /* Custom background color */
+	color: white; /* Custom text color */
+	font-weight: bold;
+	padding: 10px 20px;
+	border: none;
+	border-radius: 5px;
+}
+
+.custom-button:hover {
+	background-color: #d87b6c; /* Custom hover background color */
+	color: white; /* Custom hover text color */
+}
+
+.custom-post-title {
+	font-size: 20px;
+	font-weight: 500;
+	color: #444; /* Custom color */
+}
+
+.custom-post-content {
+	font-size: 16px;
+	font-weight: 300;
+	color: #666; /* Custom color */
+}
