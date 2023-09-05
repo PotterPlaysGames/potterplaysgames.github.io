@@ -20,6 +20,20 @@ async function setupAuth() {
         const navBarNotLoggedIn = `
             <ul>
                 <li><a href="../index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="#" style="color: black" class="dropbtn">Blog</a>
+                    <div class="dropdown-content">
+                        <a href="#" style="color: black">Service</a>
+                        <!-- Nested Dropdown -->
+                        <div class="nested-dropdown">
+                            <a href="#" style="color: black" class="dropbtn">Projects</a>
+                            <div class="nested-dropdown-content">
+                                <a href="#" style="color: black">Gaming</a>
+                                <a href="#" style="color: black">Buisness</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
                 <li><a href="../AboutMe/">About Me</a></li>
                 <li><a href="https://github.com/potterplaysgames">Github</a></li>
                 <li><a href="#" id="lbutton" class="button">Login/Sign Up</a></li>
@@ -55,6 +69,20 @@ async function setupAuth() {
             const navBarLoggedIn = `
             <ul>
                 <li><a href="../index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Blog</a>
+                    <div class="dropdown-content">
+                        <a href="#">Service</a>
+                        <!-- Nested Dropdown -->
+                        <div class="nested-dropdown">
+                            <a href="#" class="dropbtn">Projects<</a>
+                            <div class="nested-dropdown-content">
+                                <a href="#">Gaming</a>
+                                <a href="#">Buisness</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
                 <li><a href="../AboutMe/">About Me</a></li>
                 <li><a href="../ContactUs/">Contact</a></li>
                 <li><a href="https://github.com/potterplaysgames">Github</a></li>
@@ -164,6 +192,19 @@ function setupMobileNav() {
                 leave: function() { $header.removeClass('alt'); }
             });
         });
+    }
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+    if (!event.target.matches('.dropbtn')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        for (var i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.style.display === "block") {
+                openDropdown.style.display = "none";
+            }
+        }
     }
 }
 

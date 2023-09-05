@@ -3903,29 +3903,78 @@
 	position: relative;
 	display: inline-block;
 }
+/* Style for the dropdown button */
+.dropbtn {
+	padding: 16px;
+	font-size: 16px;
+	border: none;
+	cursor: pointer;
+}
 
+/* Style for the dropdown content (hidden by default) */
 .dropdown-content {
 	display: none;
 	position: absolute;
-	right: 0; /* Adjust as needed to align with the theme */
-	background-color: rgba(0, 0, 0, 0.8); /* Gives a semi-transparent black background */
+	background-color: #f9f9f9;
+	min-width: 160px;
 	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 	z-index: 1;
-	border-radius: 6px; /* Matching the border-radius of nav items */
 }
 
+/* Style for dropdown links */
+.dropdown-content drop {
+	color: black;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+}
+
+/* Change color on hover */
+.dropdown-content drop:hover {
+	background-color: #f1f1f1;
+	color: black;
+}
+
+/* Show the dropdown content when hovering over the dropdown button */
 .dropdown:hover .dropdown-content {
 	display: block;
 }
 
-.dropdown-content a {
-	color: #fff; /* Matching the color of other nav items */
-	padding: 12px 16px;
-	display: block;
-	text-decoration: none;
-	border-radius: 6px; /* Matching the border-radius of nav items */
+/* Style for the nested dropdown button */
+.nested-dropdown .dropbtn {
+	padding: 16px;
+	font-size: 16px;
+	border: none;
+	cursor: pointer;
 }
 
-.dropdown-content a:hover {
-	background-color: rgba(153, 153, 153, 0.25); /* Hover effect similar to other nav items */
+/* Style for the nested dropdown content (hidden by default) */
+.nested-dropdown .nested-dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: #f9f9f9;
+	min-width: 160px;
+	left: 100%; /* Position to the right of the parent dropdown */
+	top: 0;
+	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+	z-index: 1;
 }
+
+/* Style for nested dropdown links */
+.nested-dropdown .nested-dropdown-content a {
+	color: black;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+}
+
+/* Change color on hover for nested dropdown links */
+.nested-dropdown .nested-dropdown-content a:hover {
+	background-color: #f1f1f1;
+}
+
+/* Show the nested dropdown content when hovering over the nested dropdown button */
+.nested-dropdown:hover .nested-dropdown-content {
+	display: block;
+}
+
